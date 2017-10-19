@@ -1,5 +1,9 @@
 /*STYLE GUIDE CSS*/
 
+fieldset {
+    display:inline-block;
+}
+
 .message {
     margin-left: 0px;
     padding-top: 8px;

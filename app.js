@@ -53,7 +53,6 @@ inboxApp.controller("viewController", [
 							console.error(error);
 						}
 					}
-
 					successCallback(response);
 					errorCallback(error);
 				});
@@ -65,14 +64,12 @@ inboxApp.controller("viewController", [
 					function successCallback(response) {
 						$scope.$root.getData();
 					}
-
 					function errorCallback(error) {
 						//error code
 						if (error) {
 							console.error(error);
 						}
 					}
-
 					successCallback(response);
 					errorCallback(error);
 				});
@@ -84,7 +81,6 @@ inboxApp.controller("viewController", [
 			.get("http://localhost:8082/api/messages")
 			.then((response, error) => {
 				$scope.$root.messages = [];
-				// $scope.unreadCount =[];
 
 				function successCallback(response) {
 					//success code
@@ -161,7 +157,7 @@ inboxApp.controller("viewController", [
 					message.selected != "undefined" && message.selected !== true
 				);
 			});
-			// BUG variables are getting correct values
+
 
 			$scope.$root.messages.forEach(message => {
 				message.selected === false;
@@ -275,7 +271,7 @@ inboxApp.controller("viewController", [
 			let object = new PatchObject($scope.messageIds, "removeLabel");
 			object.label = $scope.delLabel;
 
-			patchDB(object);
+			updateDB(object);
 		};
 
 		$scope.checkMessagesChecked = () => {
